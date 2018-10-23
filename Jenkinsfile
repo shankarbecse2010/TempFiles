@@ -1,10 +1,14 @@
 pipeline {
   agent any
   stages {
+    stage('CodeBuild') {
+      steps {
+        build 'StoragePluginDeployment'
+      }
+    }
     stage('') {
       steps {
-        sh 'echo "Hello Pipe 1"'
-        sleep 10
+        echo 'Completed'
       }
     }
   }
