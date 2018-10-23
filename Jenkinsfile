@@ -3,10 +3,10 @@ pipeline {
   stages {
     stage('CodeBuild') {
       steps {
-        build 'StoragePluginDeployment'
+        build 'VPLEX_CODE_CHECK_OUT'
       }
     }
-    stage('') {
+    stage('error') {
       steps {
         echo 'Completed'
       }
