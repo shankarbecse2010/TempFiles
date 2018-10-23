@@ -1,14 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('CodeBuild') {
+    stage('VPLEX_CODE_CHECK_OUT') {
       steps {
         build 'VPLEX_CODE_CHECK_OUT'
       }
     }
-    stage('error') {
+    stage('VPLEX_CODE_BUILD') {
       steps {
-        echo 'Completed'
+        build 'VPLEX_CODE_BUILD'
+      }
+    }
+    stage('VPLEX_ACTION_CREATION') {
+      steps {
+        build 'VPLEX_ACTION_CREATION'
       }
     }
   }
